@@ -24,6 +24,7 @@
       background: #005f99;
       padding: 10px;
       text-align: center;
+      position: relative;
     }
 
     nav a {
@@ -31,10 +32,44 @@
       text-decoration: none;
       margin: 0 15px;
       font-weight: bold;
+      padding: 8px;
     }
 
     nav a:hover {
-      text-decoration: underline;
+      background: #007acc;
+      border-radius: 5px;
+    }
+
+    /* Dropdown Menu */
+    .dropdown {
+      display: inline-block;
+      position: relative;
+    }
+
+    .dropdown-content {
+      display: none;
+      position: absolute;
+      background: white;
+      min-width: 200px;
+      box-shadow: 0px 2px 8px rgba(0,0,0,0.2);
+      border-radius: 5px;
+      z-index: 1;
+      text-align: left;
+    }
+
+    .dropdown-content a {
+      display: block;
+      color: #333;
+      padding: 10px;
+      text-decoration: none;
+    }
+
+    .dropdown-content a:hover {
+      background: #f4f4f4;
+    }
+
+    .dropdown:hover .dropdown-content {
+      display: block;
     }
 
     .container {
@@ -62,12 +97,23 @@
 
   <header>
     <h1>Welcome to My Demo Page</h1>
-    <p>Aijaz Mahar</p>
+    <p>This is a sample page for practice</p>
   </header>
 
   <nav>
     <a href="#">Home</a>
     <a href="#">About</a>
+    
+    <!-- Dropdown Menu -->
+    <div class="dropdown">
+      <a href="#">Services ▾</a>
+      <div class="dropdown-content">
+        <a href="#">Simple Cookies</a>
+        <a href="#">GDPR Cookies</a>
+        <a href="#">GDPR + Google Consent</a>
+      </div>
+    </div>
+    
     <a href="#">Contact</a>
   </nav>
 
@@ -83,10 +129,6 @@
       Lorem ipsum dolor sit amet, consectetur adipiscing elit. 
       Nulla accumsan, metus ultrices eleifend gravida, nulla nunc varius lectus.
     </p>
-
-    <p>
-      You can add more sections, images, or forms here as practice.
-    </p>
   </div>
 
   <footer>
@@ -95,4 +137,3 @@
 
 </body>
 </html>
-
