@@ -1,1 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Cookie Banner Example</title>
+  <style>
+    /* Cookie banner styles */
+    #cookie-banner {
+      position: fixed;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      background: #f8f9fa;
+      border-top: 1px solid #ccc;
+      padding: 15px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      font-family: Arial, sans-serif;
+      box-shadow: 0 -2px 5px rgba(0,0,0,0.1);
+    }
+    #cookie-banner button {
+      margin-left: 10px;
+      padding: 6px 12px;
+      border: none;
+      cursor: pointer;
+      border-radius: 4px;
+    }
+    #accept-cookies { background: #28a745; color: white; }
+    #reject-cookies { background: #dc3545; color: white; }
+  </style>
+</head>
+<body>
+
+  <h1>My Website</h1>
+  <p>Welcome to my site hosted on GitHub Pages!</p>
+
+  <!-- Cookie banner -->
+  <div id="cookie-banner">
+    <span>This site uses cookies. Do you accept?</span>
+    <div>
+      <button id="accept-cookies">Accept</button>
+      <button id="reject-cookies">Reject</button>
+    </div>
+  </div>
+
+  <script>
+    // JavaScript to handle accept/reject
+    const banner = document.getElementById('cookie-banner');
+    const acceptBtn = document.getElementById('accept-cookies');
+    const rejectBtn = document.getElementById('reject-cookies');
+
+    // Save decision in browser localStorage
+    acceptBtn.onclick = function() {
+      localStorage.setItem('cookieConsent', 'accepted');
+      banner.style.display = 'none';
+    };
+
+    rejectBtn.onclick = function() {
+      localStorage.setItem('cookieConsent', 'rejected');
+      banner.style.display = 'none';
+    };
+
+    // Check if user already made a choice
+    window.onload = function() {
+      let choice = localStorage.getItem('cookieConsent');
+      if (choice === 'accepted' || choice === 'rejected') {
+        banner.style.display = 'none';
+      }
+    };
+  </script>
+</body>
+</html>
 
