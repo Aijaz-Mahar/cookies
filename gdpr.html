@@ -1,8 +1,21 @@
 <html>
 <head>
-<script id="Cookiebot" src="https://consent.cookiebot.com/uc.js" data-cbid="8a97b18e-d302-480a-b15a-7f33d2b9408f"  type="text/javascript"></script>
+  <meta charset="UTF-8">
+  <title>Cookiebot Test</title>
+
+  <!-- Cookiebot script -->
+  <script 
+    id="Cookiebot" 
+    src="https://consent.cookiebot.com/uc.js" 
+    data-cbid="8a97b18e-d302-480a-b15a-7f33d2b9408f"  
+    type="text/javascript" 
+    async>
+  </script>
 </head>
 <body>
-Hello, this is GDPR complaince cookie
+  <h1>Hello, this is GDPR compliance cookie</h1>
+
+  <!-- Optional: Add manual banner trigger for testing -->
+  <button onclick="Cookiebot.renew()">Change Cookie Consent</button>
 </body>
 </html>
